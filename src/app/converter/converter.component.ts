@@ -22,6 +22,10 @@ export class ConverterComponent implements OnInit {
       .subscribe((res) => (this.rates = res.rates));
   }
 
+  getAllCurrencies(): string[] {
+    return Object.keys(this.rates);
+  }
+
   constructor(private service: ExchangeRatesService) {}
 
   ngOnInit(): void {
